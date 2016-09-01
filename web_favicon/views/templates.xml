@@ -3,7 +3,6 @@
     <data>
         <template id="layout" inherit_id="web.layout">
             <xpath expr="//link[@rel='shortcut icon']" position="replace">
-            	<meta name="google-site-verification" content="suUyekV-Wujze6ea-aWWlgIbqhSfqn5WvGm9_ATi0iQ" />
                 <link rel="icon" href="/web_favicon/favicon" />
             </xpath>
         </template>
