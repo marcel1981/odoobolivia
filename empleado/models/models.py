@@ -29,8 +29,7 @@ class cargo(models.Model):
     cliente_id = fields.Many2one('res.partner','Cliente', required=True)
     empleado = fields.Many2one('empleado.empleado','Empleado')
     
-class res_partner(models.Model):
-    _name = 'res.partnerx'        
+class res_partner(models.Model):            
     _inherit = 'res.partner'
     
-    ci = fields.Integer(string="Carnet de Identidad", required=True)
+    ci = fields.Integer('Carnet de Identidad', required=True)
