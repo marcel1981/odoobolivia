@@ -1,0 +1,181 @@
+<openerp>
+  <data>
+    <!-- explicit list view definition -->
+    
+    <record model="ir.ui.view" id="empleado.list">
+      <field name="name">empleado.lista.tree</field>
+      <field name="model">empleado.empleado</field>
+      <field name="arch" type="xml">
+        <tree string="Listado de Empleados 2016">
+          <field name="name"/>
+          <field name="ci"/>
+          <field name="edad"/>
+          <field name="direccion"/>
+          <field name="telefono"/>
+          <field name="state"/>          
+        </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="empleado.form">
+      <field name="name">empleado.lista.form</field>
+      <field name="model">empleado.empleado</field>
+      <field name="arch" type="xml">
+        <form string="Listado de Empleados 2016">
+         <header>
+         	<field name="state" widget="statusbar" />
+         </header>
+         <sheet>
+         <group colspan="4">
+         	<group colspan="2" col="2">
+         		<separator string="Datos Generales" colspan="2"/> 
+          			<field name="name"/>
+          			<field name="ci"/>
+          	</group>
+          	<group colspan="2" col="2">
+          		<separator string="Fechas" colspan="2"/>
+          			<field name="edad"/>
+          			<field name="telefono"/>
+          			<field name="active"/>
+          	</group>
+          	<notebook colspan="4">
+          		<page string="Descripcion de la Direccion">
+          			<field name="direccion" placeholder="Descripcion de la direccion..."/>
+          		</page>
+          		<page string="Otros Datos">
+          			Este es un dato de ejemplo
+          		</page>
+          	</notebook>
+          </group>
+          </sheet>          
+        </form>
+      </field>
+    </record>
+    
+    <!-- <record model="ir.ui.view" id="empleado.search">
+            <field name="name">empleado.lista.search</field>
+            <field name="model">empleado.empleado</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre"/>
+                    <field name="ci"/>
+                </search>
+            </field>
+        </record> -->
+        
+    <record model="ir.ui.view" id="empleado_cargo_tree">
+      <field name="name">empleado.cargo.tree</field>
+      <field name="model">empleado.cargo</field>
+      <field name="arch" type="xml">
+        <tree string="Listado de Cargos">
+          <field name="name"/>
+          <field name="salario"/>
+          <field name="fecha_inicial"/>                    
+        </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="empleado_cargo_form">
+      <field name="name">empleado.cargo.form</field>
+      <field name="model">empleado.cargo</field>
+      <field name="arch" type="xml">
+        <form string="Listado de Cargos">         
+         <sheet>
+         <group colspan="4">
+         	<group colspan="2" col="2">
+         		<separator string="Datos Generales" colspan="2"/> 
+          			<field name="name"/>
+          			<field name="salario"/>
+          			<field name="fecha_inicial"/>
+          			<field name="cliente_id"/>
+          			<field name="empleado"/>
+          	</group>          	
+          </group>
+          </sheet>          
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="empleado.action_window">
+      <field name="name">Lista de Empleados</field>
+      <field name="res_model">empleado.empleado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <record model="ir.actions.act_window" id="empleado_cargo_action_window">
+      <field name="name">Lista de Cargos</field>
+      <field name="res_model">empleado.cargo</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="empleado.action_server">
+      <field name="name">empleado server</field>
+      <field name="model_id" ref="model_empleado_empleado"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    
+    <menuitem name="Empleados" id="empleado.menu_root" sequence="10"/>
+    
+    <!-- menu categories -->
+    
+    <menuitem name="Empleados" id="empleado.empleados" parent="empleado.menu_root"/>
+    
+    <menuitem name="Cargos" id="empleado.cargo" parent="empleado.menu_root"/>
+    
+    
+    <!-- actions -->
+    
+    <menuitem name="Listado" id="empleado.menu_lista" parent="empleado.empleados"
+              action="empleado.action_window"/>
+    
+    <menuitem name="Cargos" id="empleado.menu_cargo" parent="empleado.cargo"
+              action="empleado_cargo_action_window"/>
+    <!-- 
+    <menuitem name="Server to list" id="empleado" parent="empleado.menu_2"
+              action="empleado.action_server"/>
+    -->
+    
+    <!--  
+    <record model="ir.ui.view" id="partner_instructor_form_view">
+            <field name="name">partner.ci</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <notebook>
+                    <page string="IVAN">
+                        <group>
+                            <field name="ci"/>                            
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="contact_list_action">
+            <field name="name">Contacts</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <menuitem id="configuration_menu" name="Configuration"
+                  parent="empleado.menu_root"/>
+        <menuitem id="contact_menu" name="Contacts"
+                  parent="configuration_menu"
+                  action="contact_list_action"/>
+   --> 
+    
+  </data>
+</openerp>
