@@ -87,7 +87,7 @@
           			<field name="name"/>
           			<field name="salario"/>
           			<field name="fecha_inicial"/>
-          			<field name="cliente_id"/>
+          			<field name="cliente_id" domain="[('cliente_id', '=', True)]"/>
           			<field name="empleado"/>
           	</group>          	
           </group>

@@ -1,0 +1,31 @@
+<openerp>
+  <data>
+    
+    <record model="ir.ui.view" id="partner_dni_bo_form_view">
+    	<field name="name">partner.dni.bo</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+        <field name="website" position="after">
+        <group colspan="2" col="2">
+        	<separator string="Datos de Identificacion" colspan="2"/>                    
+        	<field name="ci"/>
+        	<field name="emision"/>        	        	                            
+        	</group>
+        </field>
+        </field>
+        </record>
+        
+        <!-- <record model="ir.actions.act_window" id="partner_dni_action">
+            <field name="name">Partner.dni.action</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem id="configuration_menu" name="Usuario"/>
+        <menuitem id="contact_menu" name="Lista de Clientes"
+                  parent="configuration_menu"
+                  action="partner_dni_action"/> -->
+    
+  </data>
+</openerp>

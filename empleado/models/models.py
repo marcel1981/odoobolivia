@@ -2,11 +2,7 @@
 
 from openerp import models, fields, api
 from datetime import time, datetime
-from email import _name
-from encodings.punycode import digits
-from pychart.arrow import default
-from pkg_resources import require
-from pygments.lexer import _inherit
+
 
 
 class empleado(models.Model):
@@ -20,6 +16,8 @@ class empleado(models.Model):
      active = fields.Boolean(string="Activo")
      state = fields.Selection([('draft','Borrador'),('confirmed','Confirmado'),('cancel','Cancelado')],'Estado',default='draft')
 
+     _sql_constraints = [('ci_emision_unique', 'unique(ci,edad)', "Error! This Type already exists!")]     
+
 class cargo(models.Model):
     _name = 'empleado.cargo'
     
@@ -29,7 +27,11 @@ class cargo(models.Model):
     cliente_id = fields.Many2one('res.partner','Cliente', required=True)
     empleado = fields.Many2one('empleado.empleado','Empleado')
     
-class res_partner(models.Model):            
-    _inherit = 'res.partner'
+    #_defaults = {
+    #    "cliente_id": lambda self, cr, uid, c: c.get('cliente_id', False),
+    #}
     
-    ci = fields.Integer('Carnet de Identidad', required=True)
+#class res_partner(models.Model):            
+#    _inherit = 'res.partner'
+    
+#    ci = fields.Integer('Carnet de Identidad', required=True)
