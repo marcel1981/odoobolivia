@@ -3,7 +3,7 @@ English
 This module was developed to add identity card and identification for Department where Bolivia was issued fields, Bolivia also establishes default when registering a client.
 
 
-UNICO Restriccion
+UNIQUE Restriccion
 ==============================================
 
 C.I. and the Department are unique identifier:
