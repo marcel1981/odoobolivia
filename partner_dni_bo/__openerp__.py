@@ -12,7 +12,7 @@
         
         Spanish: Este modulo se desarrollo para añadir los campos Carnet de Identidad y Departamento donde se emitio la identificacion para Bolivia, tambien establece por defecto Bolivia al momento de registrar un cliente.
         
-        Restriccion: C.I. y Departamento son un identificador unico: _sql_constraints = [('unique_fields', 'unique(ci,emision), 'Error! This Type already exists!')].
+        Restriccion: C.I. y Departamento son un identificador unico: _sql_constraints = [('ci_emision_unique', 'unique(ci,emision), 'Error: Customer already registered!')].
     """,
 
     'author': "Ivan Carvajal",
