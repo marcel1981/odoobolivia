@@ -19,7 +19,8 @@
         The shop manager will know who made the sell.
     """,
 
-    'author': "Thierry Godin, Ivan Carvajal",
+    'author': "Thierry Godin",
+    'update': "Ivan Carvajal",
     'website': "http://www.boliviacic.com",
 
     # Categories can be used to filter modules in modules listing

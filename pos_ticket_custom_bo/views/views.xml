@@ -1,0 +1,9 @@
+<openerp>
+  <data>
+    <!-- <t t-extend="PosTicket">
+    	<t t-jquery=".pos-sale-ticket" t-operation="append">
+    		Cliente : <span id=ticket-screen-partner-name></span>
+    	</t>
+    </t>-->
+  </data>
+</openerp>
