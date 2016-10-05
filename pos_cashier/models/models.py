@@ -29,9 +29,9 @@ class pos_cashier(models.Model):
     _name = 'pos_cashier.pos_cashier'
     _order = 'cashier_name asc'
     
-    'pos_config_id' = fields.Many2one('pos.config', 'Point Of Sale', required=True)
-    'cashier_name' = fields.Char('Cashier', size=128, required=True)
-    'active' = fields.Boolean('Active', help="If a cashier is not active, it will not be displayed in POS")
+    pos_config_id = fields.Many2one('pos.config','Point Of Sale',required=True)
+    cashier_name = fields.Char('Cashier', size=128, required=True)
+    active = fields.Boolean('Active', help="If a cashier is not active, it will not be displayed in POS")
 
     _defaults = {
         'cashier_name' : '',
