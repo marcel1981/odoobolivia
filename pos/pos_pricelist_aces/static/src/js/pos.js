@@ -82,7 +82,7 @@ ProductScreenWidgetAce.include({
 		
         var pricelist_list = this.pos.prod_pricelists;
         var new_options = [];
-        new_options.push('<option value="">Selecciones una lista de precios</option>\n');
+        new_options.push('<option value="">Select Pricelist</option>\n');
         if(pricelist_list.length > 0){
             for(var i = 0, len = pricelist_list.length; i < len; i++){
                 new_options.push('<option value="' + pricelist_list[i].id + '">' + pricelist_list[i].display_name + '</option>\n');
@@ -98,7 +98,7 @@ ProductScreenWidgetAce.include({
             var partner_id = self.pos.get('selectedOrder').get_client() && parseInt(self.pos.get('selectedOrder').get_client().id);
             if (!partner_id) {
             	$('#price_list').html(new_options);
-                alert('Primero debe seleccionar un cliente!');
+                alert('Pricelist will not work as customer is not selected !');
                 return;
             }
         });
