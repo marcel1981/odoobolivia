@@ -32,12 +32,12 @@
         	            <col width='15%' />
             	    </colgroup>                	                		
     					<tr class="border-black">
-    					    <th class="pos-right-align">Quantity</th>
+    					    <th class="pos-left-align">Can.</th>
         					<th>Description</th>	            			
     	        			<th class="pos-right-align">Price</th>
         				</tr>					             
 	                <tr t-foreach="orderlines" t-as="orderline">
-	                    <td class="pos-right-align">
+	                    <td class="pos-left-align">
 	                        <t t-esc="orderline.get_quantity_str_with_unit()"/>
     	                </td>
     	                <td>
