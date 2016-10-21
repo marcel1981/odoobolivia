@@ -1,0 +1,18 @@
+.pos .pos-sale-ticket {
+	width: 400px;	
+}
+
+.pos .pos-sale-ticket .bold{
+	font-weight: bold;
+}
+
+@media print {    
+    .pos .pos-sale-ticket{
+        margin: auto !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        border: none !important;
+        font-size: 13px !important;
+        width: 600px !important;
+    }    
+}

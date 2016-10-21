@@ -1,0 +1,9 @@
+<openerp>
+  <data>
+  		<template id="index" name="pos_b index" inherit_id="point_of_sale.index">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" href="/pos_custom_print_ticket/static/src/css/pos.css" id="pos-stylesheet"/>
+            </xpath>
+        </template>   
+  </data>
+</openerp>
