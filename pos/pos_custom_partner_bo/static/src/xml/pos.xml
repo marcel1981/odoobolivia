@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template>
+    <t t-extend="ClientDetails">
+    	<t t-jquery=".client-details-box" t-operation="replace">        	
+        	 <div class='client-details-box clearfix'>
+        	 <div class='client-details-left'>
+                    <div class='client-detail'>
+                        <span class='label'>Address</span>
+                        <span class='detail client-address'><t t-esc='partner.address' /></span>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>Email</span>
+                        <span class='detail client-email'><t t-esc='partner.email' /></span>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>C.I.</span>
+                        <t t-if='partner.ci'>
+                            <span class='detail client-phone'><t t-esc='partner.ci' /></span>
+                        </t>
+                        <t t-if='!partner.ci'>
+                            <span class='detail client-phone empty'>N/A</span>
+                        </t>
+                    </div>
+                </div>
+                <div class='client-details-right'>
+                    <div class='client-detail'>
+                        <span class='label'>Phone</span>
+                        <t t-if='partner.phone'>
+                            <span class='detail client-phone'><t t-esc='partner.phone' /></span>
+                        </t>
+                        <t t-if='!partner.phone'>
+                            <span class='detail client-phone empty'>N/A</span>
+                        </t>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>Celular</span>
+                        <t t-if='partner.mobile'>
+                            <span class='detail client-mobile'><t t-esc='partner.mobile' /></span>
+                        </t>
+                        <t t-if='!partner.mobile'>
+                            <span class='detail client-mobile empty'>N/A</span>
+                        </t>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>NIT</span>
+                        <t t-if='partner.vat'>
+                            <span class='detail vat'><t t-esc='partner.vat'/></span>
+                        </t>
+                        <t t-if='!partner.vat'>
+                            <span class='detail vat empty'>N/A</span>
+                        </t>
+                    </div>
+                </div>
+        	    </div>           
+         </t>
+    </t>
+    
+    <t t-extend="ClientDetailsEdit">
+    	<t t-jquery=".client-details-box" t-operation="replace">        	
+        	 <div class='client-details-box clearfix'>
+                <div class='client-details-left'>
+                	<div class='client-detail'>
+                        <span class='label'>C.I.</span>
+                        <input class='detail vat'           name='ci'     t-att-value='partner.ci || ""'></input>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>Street</span>
+                        <input class='detail client-address-street' name='street'       t-att-value='partner.street' placeholder='Street'></input>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>City</span>
+                        <input class='detail client-address-city'   name='city'         t-att-value='partner.city' placeholder='City'></input>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>Postcode</span>
+                        <input class='detail client-address-zip'    name='zip'          t-att-value='partner.zip' placeholder='ZIP'></input>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>Country</span>
+                        <select class='detail client-address-country' name='country_id'>
+                            <option value=''>None</option>
+                            <t t-foreach='widget.pos.countries' t-as='country'>
+                                <option t-att-value='country.id' t-att-selected="partner.country_id ? ((country.id === partner.country_id[0]) ? true : undefined) : undefined"> 
+                                    <t t-esc='country.name'/>
+                                </option>
+                            </t>
+                        </select>
+                    </div>
+                </div>
+                <div class='client-details-right'>
+                    <div class='client-detail'>
+                        <span class='label'>Email</span>
+                        <input class='detail client-email'  name='email'    type='email'    t-att-value='partner.email || ""'></input>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>Phone</span>
+                        <input class='detail client-phone'  name='phone'    type='tel'      t-att-value='partner.phone || ""'></input>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>Celular</span>
+                        <input class='detail mobile'       name='mobile'    t-att-value='partner.mobile || ""'></input>
+                    </div>
+                    <div class='client-detail'>
+                        <span class='label'>NIT</span>
+                        <input class='detail vat'           name='vat'     t-att-value='partner.vat || ""'></input>
+                    </div>
+                </div>
+            </div>           
+         </t>
+    </t> 
+        
+</template>

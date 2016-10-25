@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pos_custom_partner_bo_pos_custom_partner_bo,pos_custom_partner_bo.pos_custom_partner_bo,model_pos_custom_partner_bo_pos_custom_partner_bo,,1,0,0,0

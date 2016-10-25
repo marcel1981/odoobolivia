@@ -1,0 +1,9 @@
+<openerp>
+  <data>
+    <template id="pos_custom_partner_extend" name="pos_custom_partner assets" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/pos_custom_partner_bo/static/src/js/pos_partner.js"></script>               
+            </xpath>
+    </template>
+  </data>
+</openerp>
