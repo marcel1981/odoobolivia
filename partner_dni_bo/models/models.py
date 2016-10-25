@@ -20,12 +20,14 @@
 ##############################################################################
 
 from openerp import models, fields, api
+from lib2to3.fixer_util import String
 
 class partner_dni_bo(models.Model):
     _inherit = 'res.partner'
     
     ci = fields.Char(string='Carnet de Identidad',required=True)
-    emision = fields.Many2one('res.country.state', string='Emitido en',required=True)    
+    emision = fields.Many2one('res.country.state', string='Emitido en',required=True)
+    vat = fields.Char(string='NIT')    
 
     _sql_constraints = [('ci_emision_unique', 'unique(ci,emision)', "Error: Cliente ya registrado!")]    
     
