@@ -27,8 +27,8 @@
         	<div line-ratio = '0.6'>
         		<table class='receipt-orderlines'>
                 	<colgroup>
-	                    <col width='15%' />
-    	                <col width='70%' />
+	                    <col width='10%' />
+    	                <col width='75%' />
         	            <col width='15%' />
             	    </colgroup>                	                		
     					<tr class="border-black">
